@@ -2,36 +2,186 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastreo | Dulce Bocado</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="logo"><h1>Dulce Bocado 🍰</h1></div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Menú</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="seguimiento.html">Rastrear Pedido</a></li>
-            <li><a href="carrito.html">Carrito 🛒</a></li>
-            <li><a href="login.html" class="btn-login">👤 Mi Cuenta</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main>
-    <section class="tracking">
-        <h2>Estado de tu Pedido #8492</h2>
-        <div class="progress-bar">
-            <div class="step completed">✅ Recibido</div>
-            <div class="step completed">🔥 En el Horno</div>
-            <div class="step active">🎨 Decorando</div>
-            <div class="step">🛵 En Camino</div>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Dulce Bocado <span class="logo-emoji">🍰</span></a>
+            <button class="mobile-toggle" id="mobile-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Menú</a></li>
+                    <li><a href="seguimiento.html" class="nav-link active">Rastreo</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="carrito.html" class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                </div>
+            </nav>
         </div>
-        <p>Tu pedido está siendo decorado por nuestros expertos. Tiempo estimado: 30 min.</p>
-        <button class="btn">Contactar Repartidor</button>
-    </section>
-</main>
+    </header>
+
+    <main class="main-content">
+        <div class="container section-padding">
+            
+            <div class="tracking-card">
+                <div class="tracking-header">
+                    <div class="tracking-info">
+                        <p class="tracking-label">Número de pedido</p>
+                        <h1 class="tracking-title">Estado del Pedido #8492</h1>
+                    </div>
+                    <div class="tracking-badge">
+                        <span class="pulse-dot"></span>
+                        Tiempo Estimado: 25 min
+                    </div>
+                </div>
+
+                <div class="stepper-container">
+                    <div class="progress-line-bg">
+                        <div class="progress-line-fill" style="width: 50%;"></div>
+                    </div>
+                    
+                    <div class="steps-wrapper">
+                        <div class="step completed">
+                            <div class="step-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div class="step-text">
+                                <p class="step-title">Recibido</p>
+                                <p class="step-desc">Pedido confirmado</p>
+                            </div>
+                        </div>
+
+                        <div class="step completed">
+                            <div class="step-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.1.2-2.2.6-3a2.684 2.684 0 0 1 2.9 2.5z"></path></svg>
+                            </div>
+                            <div class="step-text">
+                                <p class="step-title">En el Horno</p>
+                                <p class="step-desc">Horneando con amor</p>
+                            </div>
+                        </div>
+
+                        <div class="step active">
+                            <div class="step-circle">
+                                <div class="pulse-ring"></div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.375 2.625a3.875 3.875 0 0 0-5.5 5.5l-9 9a2 7.75 7.75 0 0 0 0 3.75H14"></path><path d="M14 6l-6 6"></path><path d="M2 22h20"></path></svg>
+                            </div>
+                            <div class="step-text">
+                                <p class="step-title">Decorando</p>
+                                <p class="step-desc">Nuestros reposteros están dando los toques finales.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                            </div>
+                            <div class="step-text">
+                                <p class="step-title">En Camino</p>
+                                <p class="step-desc">Pronto en tu puerta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary-box">
+                    <div class="summary-title-row">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        <h2>Resumen de Compra</h2>
+                    </div>
+                    <ul class="summary-list">
+                        <li>
+                            <span>1x Pastel de Chocolate Belga</span>
+                            <span class="price-text">RD$ 1,850</span>
+                        </li>
+                        <li>
+                            <span>2x Flan de Caramelo</span>
+                            <span class="price-text">RD$ 760</span>
+                        </li>
+                        <li>
+                            <span>Tarifa de Delivery</span>
+                            <span class="price-text">RD$ 150</span>
+                        </li>
+                    </ul>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span style="color:var(--primary)">RD$ 2,760</span>
+                    </div>
+                </div>
+
+                <div class="delivery-details">
+                    <h2>Detalles de Entrega</h2>
+                    <div class="details-grid">
+                        <div class="detail-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div>
+                                <p class="detail-label">Dirección</p>
+                                <p class="detail-value">Calle El Sol #45, Ensanche Naco<br>Santo Domingo, D.N.</p>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <div>
+                                <p class="detail-label">Repartidor</p>
+                                <p class="detail-value">Juan Pérez</p>
+                                <p class="detail-sub">Te contactará al llegar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="support-action">
+                    <button class="btn-outline-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Contactar Soporte
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Dulce Bocado <span style="font-size:1.5rem">🍰</span></h3>
+                <p>Creamos momentos dulces con ingredientes frescos y mucho amor.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Menú</a></li>
+                    <li><a href="rastreo.html">Rastreo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Dulce Bocado. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-btn').addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
