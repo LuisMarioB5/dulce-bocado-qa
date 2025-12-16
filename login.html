@@ -2,40 +2,201 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Acceso Clientes | Dulce Bocado</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | Dulce Bocado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="logo"><h1>Dulce Bocado 🍰</h1></div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Volver al Inicio</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main>
-    <div class="login-container">
-        <section class="form-box">
-            <h2>Iniciar Sesión</h2>
-            <form action="index.html">
-                <label>Correo Electrónico</label>
-                <input type="email" required placeholder="tu@correo.com">
-                <label>Contraseña</label>
-                <input type="password" required placeholder="******">
-                <button type="submit" class="btn">Entrar</button>
+    <main class="login-full-page">
+        <div class="login-bg-overlay"></div>
+        
+        <div class="login-card">
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="index.html" class="logo" style="justify-content: center; font-size: 1.5rem;">
+                    Dulce Bocado <span class="logo-emoji">🍰</span>
+                </a>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login-form">Iniciar Sesión</button>
+                <button class="auth-tab" data-target="register-form">Crear Cuenta</button>
+            </div>
+
+            <form id="login-form" class="auth-form active-form" action="index.html">
+                <div class="input-group">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
+                
+                <div class="input-group">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <input type="password" placeholder="Contraseña" class="password-input" required>
+                    <button type="button" class="toggle-password">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn btn-secondary btn-full btn-lg">Entrar</button>
+                
+                <div class="social-divider">
+                    <span>O continúa con</span>
+                </div>
+
+                <div class="social-buttons">
+                    <button type="button" class="social-btn google">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Google
+                    </button>
+                    <button type="button" class="social-btn facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Facebook
+                    </button>
+                </div>
             </form>
-        </section>
 
-        <div class="divider"></div>
+            <form id="register-form" class="auth-form" action="index.html">
+                <div class="input-group">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+                
+                <div class="input-group">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
 
-        <section class="form-box">
-            <h2>¿Nuevo aquí?</h2>
-            <p>Crea una cuenta para acumular puntos y rastrear tus pasteles.</p>
-            <button class="btn btn-outline">Crear Cuenta</button>
-        </section>
-    </div>
-</main>
+                <div class="input-group">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <input type="password" id="reg-pass" placeholder="Contraseña" class="password-input" required>
+                    <button type="button" class="toggle-password">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
+                </div>
+
+                <div class="input-group">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <input type="password" id="reg-confirm" placeholder="Confirmar contraseña" class="password-input" required>
+                </div>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Acepto los <a href="#">Términos y Condiciones</a></label>
+                </div>
+
+                <button type="submit" class="btn btn-secondary btn-full btn-lg">Crear Cuenta</button>
+
+                <div class="social-divider">
+                    <span>O regístrate con</span>
+                </div>
+
+                <div class="social-buttons">
+                    <button type="button" class="social-btn google">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Google
+                    </button>
+                    <button type="button" class="social-btn facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Facebook
+                    </button>
+                </div>
+            </form>
+            
+        </div>
+    </main>
+
+    <script>
+        /* -------------------------------------------------- */
+        /* 1. Lógica de Pestañas (Tabs)                       */
+        /* -------------------------------------------------- */
+        const tabs = document.querySelectorAll('.auth-tab');
+        const forms = document.querySelectorAll('.auth-form');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                forms.forEach(f => f.classList.remove('active-form'));
+                tab.classList.add('active');
+                const targetId = tab.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active-form');
+            });
+        });
+
+        /* -------------------------------------------------- */
+        /* 2. Lógica del "Ojo" (Mostrar/Ocultar Contraseña)   */
+        /* -------------------------------------------------- */
+        
+        // A) Para el LOGIN (Funciona individualmente)
+        const loginToggle = document.querySelector('#login-form .toggle-password');
+        if(loginToggle) {
+            loginToggle.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const isPass = input.type === 'password';
+                input.type = isPass ? 'text' : 'password';
+                this.style.color = isPass ? 'var(--primary)' : '#999';
+            });
+        }
+
+        // B) Para el REGISTRO (Ojos Sincronizados)
+        const regPass = document.getElementById('reg-pass');
+        const regConfirm = document.getElementById('reg-confirm');
+        const regToggles = document.querySelectorAll('#register-form .toggle-password');
+
+        regToggles.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Verificar estado actual del input asociado a este botón
+                const currentInput = this.previousElementSibling;
+                const isPass = currentInput.type === 'password';
+                
+                // Aplicar el cambio a AMBOS inputs para mantenerlos sincronizados
+                regPass.type = isPass ? 'text' : 'password';
+                regConfirm.type = isPass ? 'text' : 'password';
+
+                // Cambiar el color de AMBOS iconos
+                regToggles.forEach(toggle => {
+                    toggle.style.color = isPass ? 'var(--primary)' : '#999';
+                });
+            });
+        });
+
+        /* -------------------------------------------------- */
+        /* 3. Validación Nativa (Sin Alerts)                  */
+        /* -------------------------------------------------- */
+        const registerForm = document.getElementById('register-form');
+
+        // Función para limpiar el error mientras el usuario escribe
+        function clearCustomError() {
+            regConfirm.setCustomValidity(''); 
+        }
+
+        regPass.addEventListener('input', clearCustomError);
+        regConfirm.addEventListener('input', clearCustomError);
+
+        registerForm.addEventListener('submit', (e) => {
+            if (regPass.value !== regConfirm.value) {
+                e.preventDefault(); // Detener envío
+                
+                // Usar la API nativa de HTML5 para mostrar el error en el input
+                regConfirm.setCustomValidity("The passwords do not match");
+                regConfirm.reportValidity(); // Muestra la burbuja de error inmediatamente
+            } else {
+                regConfirm.setCustomValidity(""); // Todo en orden
+            }
+        });
+
+        // Menu Móvil (Header)
+        const mobileBtn = document.getElementById('mobile-btn');
+        if(mobileBtn){
+             mobileBtn.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
