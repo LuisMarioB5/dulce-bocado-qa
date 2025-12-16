@@ -3,49 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Repostería Dulce Bocado</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Contacto | Dulce Bocado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="logo">
-        <h1>Dulce Bocado 🍰</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Volver al Inicio</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main>
-    <section class="contacto-form">
-        <h2>¡Haz tu pedido o cotización!</h2>
-        <p>Déjanos tus datos y te responderemos a la brevedad.</p>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Dulce Bocado <span class="logo-emoji">🍰</span></a>
+            <button class="mobile-toggle" id="mobile-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Menú</a></li>
+                    <li><a href="seguimiento.html" class="nav-link">Rastreo</a></li>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="carrito.html" class="btn-icon" aria-label="Carrito">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    </a>
+                    <a href="login.html" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        Login
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-        <form action="#" method="post">
-            <div class="campo">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contacto</h1>
+                <p>Estamos aquí para crear momentos dulces contigo.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container contact-layout">
+                
+                <div class="contact-info-col">
+                    <div class="info-header">
+                        <h2>Hablemos de algo dulce</h2>
+                        <p>¿Tienes una idea para un pastel personalizado o dudas sobre tu pedido? Estamos aquí para ayudarte.</p>
+                    </div>
+
+                    <div class="contact-details-card">
+                        <h3>Información de Contacto</h3>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <div class="icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <p class="label">Dirección</p>
+                                    <p class="value">Calle El Sol #45, Ensanche Naco, Santo Domingo</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="label">Teléfono</p>
+                                    <p class="value">(809) 555-0123</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <p class="label">Email</p>
+                                    <p class="value">pedidos@dulcebocado.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="icon-circle">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <div>
+                                    <p class="label">Horario</p>
+                                    <p class="value">Lun - Dom: 8:00 AM - 8:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-image-box">
+                        <img src="img/contact-shop.jpg" alt="Interior de la tienda">
+                    </div>
+                </div>
+
+                <div class="contact-form-col">
+                    <div class="contact-form-card">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label>Nombre Completo</label>
+                                <input type="text" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo Electrónico</label>
+                                <input type="email" placeholder="tu@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono <span style="opacity:0.5">(Opcional)</span></label>
+                                <input type="tel" placeholder="(809) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label>Asunto</label>
+                                <select required>
+                                    <option value="" disabled selected>Selecciona un asunto</option>
+                                    <option value="cotizacion">Cotización de Pastel</option>
+                                    <option value="pedido">Estado de Pedido</option>
+                                    <option value="sugerencia">Sugerencia</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tu Mensaje</label>
+                                <textarea rows="5" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-full btn-lg">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="campo">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required placeholder="Ej: juan@email.com">
+            <div class="container faq-section">
+                <h2 class="faq-title">Preguntas Frecuentes</h2>
+                <div class="accordion">
+                    
+                    <details class="accordion-item">
+                        <summary class="accordion-trigger">
+                            ¿Con cuánto tiempo debo pedir mi pastel?
+                            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="accordion-content">
+                            <p>Recomendamos hacer tu pedido con al menos 48 horas de anticipación para pasteles estándar. Para diseños personalizados o pedidos grandes, sugerimos contactarnos con una semana de anticipación.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-trigger">
+                            ¿Hacen delivery a toda la ciudad?
+                            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="accordion-content">
+                            <p>Sí, realizamos entregas a todo Santo Domingo y zonas aledañas. El costo de delivery varía según la ubicación, desde RD$150 para zonas cercanas.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-trigger">
+                            ¿Puedo personalizar completamente mi pastel?
+                            <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </summary>
+                        <div class="accordion-content">
+                            <p>¡Por supuesto! Nos especializamos en pasteles personalizados. Puedes elegir el sabor, relleno, decoración y diseño. Envíanos tu idea y te daremos una cotización.</p>
+                        </div>
+                    </details>
+
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="campo">
-                <label for="mensaje">Mensaje / Pedido:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describe tu pastel ideal..."></textarea>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Dulce Bocado <span style="font-size:1.5rem">🍰</span></h3>
+                <p>Creamos momentos dulces con ingredientes frescos y mucho amor.</p>
             </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Menú</a></li>
+                    <li><a href="rastreo.html">Rastreo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Dulce Bocado. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-            <button type="submit" class="btn">Enviar Mensaje</button>
-        </form>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 Repostería Dulce Bocado. Todos los derechos reservados.</p>
-</footer>
+    <script>
+        document.getElementById('mobile-btn').addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
