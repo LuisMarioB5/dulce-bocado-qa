@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagar Pedido | Dulce Bocado</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div class="logo"><h1>Dulce Bocado 🍰</h1></div>
+    <nav><ul><li><a href="index.html">Seguir Comprando</a></li></ul></nav>
+</header>
+
+<main>
+    <h2>Finalizar Compra</h2>
+    <div class="checkout-grid">
+        <section class="resumen">
+            <h3>Tu Pedido</h3>
+            <ul>
+                <li>1x Pastel de Chocolate - $1,500</li>
+                <li>1x Caja de Galletas - $500</li>
+                <li><strong>Total: $2,000 DOP</strong></li>
+            </ul>
+        </section>
+
+        <section class="pago">
+            <h3>Datos de Pago</h3>
+            <form action="seguimiento.html"> <label>Número de Tarjeta</label>
+                <input type="text" placeholder="0000 0000 0000 0000" maxlength="16">
+
+                <div class="row">
+                    <div>
+                        <label>Expira</label>
+                        <input type="text" placeholder="MM/AA">
+                    </div>
+                    <div>
+                        <label>CVV</label>
+                        <input type="text" placeholder="123">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-pay">Pagar $2,000 y Ordenar</button>
+            </form>
+        </section>
+    </div>
+</main>
+</body>
+</html>
