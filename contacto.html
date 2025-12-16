@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">Dulce Bocado <span class="logo-emoji">🍰</span></a>
@@ -209,10 +209,53 @@
         </div>
     </footer>
 
+    <div id="toast-container" class="toast-container"></div>
+
     <script>
         document.getElementById('mobile-btn').addEventListener('click', () => {
             document.getElementById('nav-menu').classList.toggle('active');
         });
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            const iconSVG = type === 'success' 
+                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>'
+                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+
+            const title = type === 'success' ? '¡Enviado!' : 'Error';
+
+            toast.innerHTML = `
+                <div class="toast-icon">${iconSVG}</div>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-msg">${message}</div>
+                </div>
+                <button class="toast-close" onclick="this.parentElement.remove()">✕</button>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.5s forwards';
+                setTimeout(() => toast.remove(), 500);
+            }, 4000);
+        }
+
+        const contactForm = document.querySelector('form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                showToast('Tu mensaje ha sido recibido. Te contactaremos pronto.');
+                
+                this.reset();
+            });
+        }
     </script>
 </body>
 </html>

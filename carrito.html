@@ -186,12 +186,10 @@
     </footer>
 
     <script>
-        // Menu Móvil
         document.getElementById('mobile-btn').addEventListener('click', () => {
             document.getElementById('nav-menu').classList.toggle('active');
         });
 
-        // Lógica del Carrito
         const items = document.querySelectorAll('.cart-item');
         const subtotalEl = document.getElementById('subtotal');
         const totalEl = document.getElementById('total-final');
@@ -208,7 +206,6 @@
                 const qty = parseInt(item.querySelector('.qty-val').innerText);
                 const itemTotal = price * qty;
                 
-                // Actualizar total visual del item
                 item.querySelector('.item-total').innerText = formatCurrency(itemTotal);
                 
                 subtotal += itemTotal;
@@ -241,7 +238,6 @@
             removeBtn.addEventListener('click', () => {
                 if(confirm('¿Eliminar producto?')) {
                     item.remove();
-                    // Recalcular todo
                     setTimeout(() => {
                         const remainingItems = document.querySelectorAll('.cart-item');
                         let subtotal = 0;

@@ -200,20 +200,16 @@
     </footer>
 
     <script>
-        // Menú Móvil
         const mobileBtn = document.getElementById('mobile-btn');
         const navMenu = document.getElementById('nav-menu');
         mobileBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-        // Filtros de Categoría
         const filterBtns = document.querySelectorAll('.filter-btn');
         const products = document.querySelectorAll('.product-card');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Quitar clase active de todos los botones
                 filterBtns.forEach(b => b.classList.remove('active'));
-                // Poner clase active al botón clickeado
                 btn.classList.add('active');
 
                 const filterValue = btn.getAttribute('data-filter');

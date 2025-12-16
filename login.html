@@ -112,9 +112,6 @@
     </main>
 
     <script>
-        /* -------------------------------------------------- */
-        /* 1. Lógica de Pestañas (Tabs)                       */
-        /* -------------------------------------------------- */
         const tabs = document.querySelectorAll('.auth-tab');
         const forms = document.querySelectorAll('.auth-form');
 
@@ -128,11 +125,6 @@
             });
         });
 
-        /* -------------------------------------------------- */
-        /* 2. Lógica del "Ojo" (Mostrar/Ocultar Contraseña)   */
-        /* -------------------------------------------------- */
-        
-        // A) Para el LOGIN (Funciona individualmente)
         const loginToggle = document.querySelector('#login-form .toggle-password');
         if(loginToggle) {
             loginToggle.addEventListener('click', function() {
@@ -143,34 +135,26 @@
             });
         }
 
-        // B) Para el REGISTRO (Ojos Sincronizados)
         const regPass = document.getElementById('reg-pass');
         const regConfirm = document.getElementById('reg-confirm');
         const regToggles = document.querySelectorAll('#register-form .toggle-password');
 
         regToggles.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Verificar estado actual del input asociado a este botón
                 const currentInput = this.previousElementSibling;
                 const isPass = currentInput.type === 'password';
                 
-                // Aplicar el cambio a AMBOS inputs para mantenerlos sincronizados
                 regPass.type = isPass ? 'text' : 'password';
                 regConfirm.type = isPass ? 'text' : 'password';
 
-                // Cambiar el color de AMBOS iconos
                 regToggles.forEach(toggle => {
                     toggle.style.color = isPass ? 'var(--primary)' : '#999';
                 });
             });
         });
 
-        /* -------------------------------------------------- */
-        /* 3. Validación Nativa (Sin Alerts)                  */
-        /* -------------------------------------------------- */
         const registerForm = document.getElementById('register-form');
 
-        // Función para limpiar el error mientras el usuario escribe
         function clearCustomError() {
             regConfirm.setCustomValidity(''); 
         }
@@ -180,17 +164,15 @@
 
         registerForm.addEventListener('submit', (e) => {
             if (regPass.value !== regConfirm.value) {
-                e.preventDefault(); // Detener envío
+                e.preventDefault();
                 
-                // Usar la API nativa de HTML5 para mostrar el error en el input
                 regConfirm.setCustomValidity("The passwords do not match");
-                regConfirm.reportValidity(); // Muestra la burbuja de error inmediatamente
+                regConfirm.reportValidity();
             } else {
-                regConfirm.setCustomValidity(""); // Todo en orden
+                regConfirm.setCustomValidity("");
             }
         });
 
-        // Menu Móvil (Header)
         const mobileBtn = document.getElementById('mobile-btn');
         if(mobileBtn){
              mobileBtn.addEventListener('click', () => {
