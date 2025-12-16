@@ -2,47 +2,253 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pagar Pedido | Dulce Bocado</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | Dulce Bocado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="logo"><h1>Dulce Bocado 🍰</h1></div>
-    <nav><ul><li><a href="index.html">Seguir Comprando</a></li></ul></nav>
-</header>
 
-<main>
-    <h2>Finalizar Compra</h2>
-    <div class="checkout-grid">
-        <section class="resumen">
-            <h3>Tu Pedido</h3>
-            <ul>
-                <li>1x Pastel de Chocolate - $1,500</li>
-                <li>1x Caja de Galletas - $500</li>
-                <li><strong>Total: $2,000 DOP</strong></li>
-            </ul>
-        </section>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Dulce Bocado <span class="logo-emoji">🍰</span></a>
+            <button class="mobile-toggle" id="mobile-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Menú</a></li>
+                    <li><a href="seguimiento.html" class="nav-link">Rastreo</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="carrito.html" class="btn-icon active" style="color: var(--primary);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-        <section class="pago">
-            <h3>Datos de Pago</h3>
-            <form action="seguimiento.html"> <label>Número de Tarjeta</label>
-                <input type="text" placeholder="0000 0000 0000 0000" maxlength="16">
+    <main class="main-content">
+        <div class="container section-padding">
+            <h1 class="page-title">Tu Carrito</h1>
 
-                <div class="row">
-                    <div>
-                        <label>Expira</label>
-                        <input type="text" placeholder="MM/AA">
+            <div class="checkout-grid">
+                
+                <div class="cart-items">
+                    
+                    <div class="cart-item" data-price="1200">
+                        <div class="item-img">
+                            <img src="img/menu-chocolate.jpg" alt="Pastel Chocolate">
+                        </div>
+                        <div class="item-details">
+                            <h3>Torta de Chocolate Belga</h3>
+                            <p class="item-price">RD$ 1,200</p>
+                            
+                            <div class="item-controls">
+                                <div class="qty-selector">
+                                    <button class="qty-btn minus">−</button>
+                                    <span class="qty-val">1</span>
+                                    <button class="qty-btn plus">+</button>
+                                </div>
+                                <button class="remove-btn" aria-label="Eliminar">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item-total">RD$ 1,200</div>
                     </div>
-                    <div>
-                        <label>CVV</label>
-                        <input type="text" placeholder="123">
+
+                    <div class="cart-item" data-price="350">
+                        <div class="item-img">
+                            <img src="img/menu-flan.jpg" alt="Flan">
+                        </div>
+                        <div class="item-details">
+                            <h3>Flan de Caramelo</h3>
+                            <p class="item-price">RD$ 350</p>
+                            <div class="item-controls">
+                                <div class="qty-selector">
+                                    <button class="qty-btn minus">−</button>
+                                    <span class="qty-val">2</span>
+                                    <button class="qty-btn plus">+</button>
+                                </div>
+                                <button class="remove-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                            </div>
+                        </div>
+                        <div class="item-total">RD$ 700</div>
                     </div>
+
+                    <div class="cart-item" data-price="180">
+                        <div class="item-img">
+                            <img src="img/menu-croissant.jpg" alt="Croissants">
+                        </div>
+                        <div class="item-details">
+                            <h3>Croissants de Mantequilla</h3>
+                            <p class="item-price">RD$ 180</p>
+                            <div class="item-controls">
+                                <div class="qty-selector">
+                                    <button class="qty-btn minus">−</button>
+                                    <span class="qty-val">3</span>
+                                    <button class="qty-btn plus">+</button>
+                                </div>
+                                <button class="remove-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                            </div>
+                        </div>
+                        <div class="item-total">RD$ 540</div>
+                    </div>
+
                 </div>
 
-                <button type="submit" class="btn-pay">Pagar $2,000 y Ordenar</button>
-            </form>
-        </section>
-    </div>
-</main>
+                <aside class="checkout-sidebar">
+                    <div class="summary-card">
+                        <div class="summary-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--primary)"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <h2>Detalles de Pago</h2>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">RD$ 2,440</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery</span>
+                                <span id="delivery">RD$ 150</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span id="total-final">RD$ 2,590</span>
+                            </div>
+                        </div>
+
+                        <form class="payment-form" action="seguimiento.html">
+                            <div class="form-group">
+                                <label>Número de Tarjeta</label>
+                                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Vence</label>
+                                    <input type="text" placeholder="MM/AA" maxlength="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="password" placeholder="123" maxlength="3" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-full" style="margin-top: 1rem;">Pagar y Ordenar</button>
+                        </form>
+
+                        <div class="trust-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #27ae60"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <span>Pago 100% seguro y encriptado</span>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Dulce Bocado <span style="font-size:1.5rem">🍰</span></h3>
+                <p>Creamos momentos dulces con ingredientes frescos y mucho amor.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Menú</a></li>
+                    <li><a href="rastreo.html">Rastreo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Dulce Bocado. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Móvil
+        document.getElementById('mobile-btn').addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // Lógica del Carrito
+        const items = document.querySelectorAll('.cart-item');
+        const subtotalEl = document.getElementById('subtotal');
+        const totalEl = document.getElementById('total-final');
+        const deliveryCost = 150;
+
+        function formatCurrency(amount) {
+            return 'RD$ ' + amount.toLocaleString('en-US');
+        }
+
+        function updateTotal() {
+            let subtotal = 0;
+            items.forEach(item => {
+                const price = parseInt(item.dataset.price);
+                const qty = parseInt(item.querySelector('.qty-val').innerText);
+                const itemTotal = price * qty;
+                
+                // Actualizar total visual del item
+                item.querySelector('.item-total').innerText = formatCurrency(itemTotal);
+                
+                subtotal += itemTotal;
+            });
+
+            subtotalEl.innerText = formatCurrency(subtotal);
+            totalEl.innerText = formatCurrency(subtotal + deliveryCost);
+        }
+
+        items.forEach(item => {
+            const minusBtn = item.querySelector('.minus');
+            const plusBtn = item.querySelector('.plus');
+            const qtyVal = item.querySelector('.qty-val');
+            const removeBtn = item.querySelector('.remove-btn');
+
+            minusBtn.addEventListener('click', () => {
+                let val = parseInt(qtyVal.innerText);
+                if(val > 1) {
+                    qtyVal.innerText = val - 1;
+                    updateTotal();
+                }
+            });
+
+            plusBtn.addEventListener('click', () => {
+                let val = parseInt(qtyVal.innerText);
+                qtyVal.innerText = val + 1;
+                updateTotal();
+            });
+
+            removeBtn.addEventListener('click', () => {
+                if(confirm('¿Eliminar producto?')) {
+                    item.remove();
+                    // Recalcular todo
+                    setTimeout(() => {
+                        const remainingItems = document.querySelectorAll('.cart-item');
+                        let subtotal = 0;
+                        remainingItems.forEach(i => {
+                            subtotal += parseInt(i.dataset.price) * parseInt(i.querySelector('.qty-val').innerText);
+                        });
+                        subtotalEl.innerText = formatCurrency(subtotal);
+                        totalEl.innerText = formatCurrency(subtotal + deliveryCost);
+                    }, 100);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
