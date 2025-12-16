@@ -3,50 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos | Repostería Dulce Bocado</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Menú | Dulce Bocado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="logo">
-        <h1>Dulce Bocado 🍰</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Menú</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="seguimiento.html">Rastrear Pedido</a></li>
-            <li><a href="carrito.html">Carrito 🛒</a></li>
-            <li><a href="login.html" class="btn-login">👤 Mi Cuenta</a></li>
-        </ul>
-    </nav>
-</header>
 
-<main>
-    <section class="catalogo">
-        <h2>Nuestra Variedad</h2>
-        <p>Explora nuestras categorías más deliciosas.</p>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Dulce Bocado <span class="logo-emoji">🍰</span></a>
+            <button class="mobile-toggle" id="mobile-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link active">Menú</a></li>
+                    <li><a href="seguimiento.html" class="nav-link">Rastreo</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="carrito.html" class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-        <article class="categoria">
-            <h3>🎂 Pasteles de Cumpleaños</h3>
-            <p>Personalizados con tu temática favorita. Sabores: Vainilla, Chocolate, Red Velvet, Zanahoria.</p>
-        </article>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Nuestro Menú</h1>
+                <p>Descubre nuestra selección de delicias artesanales, preparadas con los mejores ingredientes.</p>
+            </div>
+        </section>
 
-        <article class="categoria">
-            <h3>🍪 Mesa de Postres</h3>
-            <p>Brownies, Cake Pops, Cupcakes y Macarons para tus eventos.</p>
-        </article>
+        <section class="section-padding">
+            <div class="container menu-layout">
+                
+                <aside class="sidebar">
+                    <div class="sidebar-box">
+                        <h3>Categorías</h3>
+                        <div class="filter-group">
+                            <button class="filter-btn active" data-filter="all">Todos</button>
+                            <button class="filter-btn" data-filter="pasteles">Pasteles</button>
+                            <button class="filter-btn" data-filter="postres">Postres</button>
+                            <button class="filter-btn" data-filter="panaderia">Panadería</button>
+                        </div>
+                    </div>
+                </aside>
 
-        <article class="categoria">
-            <h3>🥖 Panadería Artesanal</h3>
-            <p>Croissants, Danes y Pan de masa madre horneado diariamente.</p>
-        </article>
-    </section>
-</main>
+                <div class="mobile-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="pasteles">Pasteles</button>
+                    <button class="filter-btn" data-filter="postres">Postres</button>
+                    <button class="filter-btn" data-filter="panaderia">Pan</button>
+                </div>
 
-<footer>
-    <p>&copy; 2024 Repostería Dulce Bocado. Todos los derechos reservados.</p>
-</footer>
+                <div class="product-grid" id="product-grid">
+                    
+                    <article class="product-card" data-category="pasteles">
+                        <div class="product-image-container">
+                            <img src="img/menu-chocolate.jpg" alt="Pastel de Chocolate" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Pastel de Chocolate Belga</h3>
+                            <span class="price">RD$ 2,500</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="pasteles">
+                        <div class="product-image-container">
+                            <img src="img/menu-red-velvet.jpg" alt="Red Velvet" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Pastel Red Velvet</h3>
+                            <span class="price">RD$ 2,200</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="pasteles">
+                        <div class="product-image-container">
+                            <img src="img/menu-tres-leches.jpg" alt="Tres Leches" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Pastel de Tres Leches</h3>
+                            <span class="price">RD$ 1,800</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="postres">
+                        <div class="product-image-container">
+                            <img src="img/menu-flan.jpg" alt="Flan" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Flan de Caramelo</h3>
+                            <span class="price">RD$ 450</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="postres">
+                        <div class="product-image-container">
+                            <img src="img/menu-tiramisu.jpg" alt="Tiramisu" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Tiramisú Italiano</h3>
+                            <span class="price">RD$ 550</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="postres">
+                        <div class="product-image-container">
+                            <img src="img/menu-cheesecake.jpg" alt="Cheesecake" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cheesecake de Fresas</h3>
+                            <span class="price">RD$ 500</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="panaderia">
+                        <div class="product-image-container">
+                            <img src="img/menu-croissant.jpg" alt="Croissants" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Croissants de Mantequilla</h3>
+                            <span class="price">RD$ 180</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="panaderia">
+                        <div class="product-image-container">
+                            <img src="img/menu-pan.jpg" alt="Pan Artesanal" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Pan de Agua Artesanal</h3>
+                            <span class="price">RD$ 120</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="panaderia">
+                        <div class="product-image-container">
+                            <img src="img/menu-empanada.jpg" alt="Empanadas" class="product-img">
+                        </div>
+                        <div class="product-info">
+                            <h3>Empanadas Dulces</h3>
+                            <span class="price">RD$ 150</span>
+                            <button class="btn btn-secondary btn-full">Agregar</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Dulce Bocado <span style="font-size:1.5rem">🍰</span></h3>
+                <p>Creamos momentos dulces con ingredientes frescos y mucho amor.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Menú</a></li>
+                    <li><a href="rastreo.html">Rastreo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Dulce Bocado. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menú Móvil
+        const mobileBtn = document.getElementById('mobile-btn');
+        const navMenu = document.getElementById('nav-menu');
+        mobileBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+        // Filtros de Categoría
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Quitar clase active de todos los botones
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Poner clase active al botón clickeado
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                products.forEach(product => {
+                    if (filterValue === 'all' || product.getAttribute('data-category') === filterValue) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

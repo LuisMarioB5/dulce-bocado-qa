@@ -276,3 +276,97 @@ img { max-width: 100%; display: block; }
     
     .hero h1 { font-size: 2rem; }
 }
+
+/* --- ESTILOS ADICIONALES PARA MENU / PRODUCTOS --- */
+
+.page-header {
+    background-color: rgba(212, 165, 165, 0.15); /* Primary color muy suave */
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.menu-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Sidebar de Filtros */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-box {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.sidebar-box h3 { margin-bottom: 1rem; color: var(--secondary); }
+
+.filter-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.filter-btn {
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.filter-btn:hover { background-color: rgba(0,0,0,0.05); color: var(--text-main); }
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+/* Mobile Filters */
+.mobile-filters {
+    display: none; /* Oculto en desktop */
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* Responsive adjustments for Menu */
+@media (max-width: 992px) {
+    .menu-layout { flex-direction: column; }
+    .sidebar { display: none; } /* Ocultar sidebar en móvil */
+    .mobile-filters { display: flex; } /* Mostrar filtros horizontales */
+    
+    .filter-btn {
+        background-color: var(--white);
+        border: 1px solid var(--border);
+        text-align: center;
+    }
+}
+
+.menu-layout .product-grid {
+    flex: 1; 
+    width: 100%;
+    
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
